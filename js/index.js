@@ -35,3 +35,12 @@ function windowResize(event){
 }
 window.addEventListener('resize', windowResize)
 
+// EVENT 5 - SCROLL TO TOP OR BOTTOM EVENT
+
+function scrollToBot(event){
+    if (document.body.scrollTop > 1210 || document.documentElement.scrollTop > 1210){
+        console.log(event.type, event.timeStamp, 'User scrolled to bottom of page')
+    } 
+}
+
+document.addEventListener('scroll', scrollToBot)
