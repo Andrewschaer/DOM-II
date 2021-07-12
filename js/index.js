@@ -35,12 +35,52 @@ function windowResize(event){
 }
 window.addEventListener('resize', windowResize)
 
-// EVENT 5 - SCROLL TO TOP OR BOTTOM EVENT
 
-function scrollToBot(event){
-    if (document.body.scrollTop > 1210 || document.documentElement.scrollTop > 1210){
-        console.log(event.type, event.timeStamp, 'User scrolled to bottom of page')
-    } 
+// EVENT 5 - DOUBLE CLICK EVENT
+const logoHeading = document.querySelector('.logo-heading')
+
+function headingGold(event){
+    logoHeading.style.color = 'gold';
+    console.log(event.type, event.timeStamp, 'User double-clicked on Fun Bus Logo Heading')
 }
 
-document.addEventListener('scroll', scrollToBot)
+logoHeading.addEventListener('dblclick', headingGold)
+
+// EVENT 6 - COPY EVENT
+function copyEvent(event){
+    console.log(event.type, event.timeStamp, 'User copied some text')
+}
+
+document.addEventListener('copy', copyEvent)
+
+// EVENT 7 - CUT EVENT
+function cutEvent(event){
+    console.log(event.type, event.timeStamp, 'User cut some text')
+}
+
+document.addEventListener('cut', cutEvent)
+
+// EVENT 8 - PASTE EVENT
+
+function pasteEvent(event){
+    console.log(event.type, event.timeStamp, 'User tried to paste some text')
+}
+
+document.addEventListener('paste', pasteEvent)
+
+// EVENT 9 - FULLSCREEN EVENT
+
+function fullScreen(event){
+    console.log(event.type, event.timeStamp, 'User is adapting window full-screen size')
+}
+
+document.addEventListener('fullscreenchange', fullScreen)
+
+// EVENT 10 - LOAD EVENT
+window.addEventListener('load', (event) => {
+    console.log((event.type, event.timeStamp, 'DOM has Loaded All Content'))
+})
+
+
+
+
